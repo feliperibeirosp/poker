@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: felipe
+Build-Jdk: 11.0.3
+Implementation-Title: poker
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: br.com
+Implementation-URL: http://maven.apache.org
+Created-By: Maven Integration for Eclipse
+

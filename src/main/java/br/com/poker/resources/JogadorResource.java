@@ -14,17 +14,12 @@ import br.com.poker.model.Jogador;
 @RestController
 public class JogadorResource {
 
-	 
-	  public JogadorResource() {
-
-	  }
-	 
 	  @RequestMapping(value = "/jogadores", method = RequestMethod.GET)
 	  public ResponseEntity<List<Jogador>> listar() {
 		  
 		  Jogador felipe = new Jogador(10, "Felipe");
 		  
-		  List<Jogador> jogadores = new ArrayList<Jogador>();
+		  List<Jogador> jogadores = new ArrayList<>();
 		  jogadores.add(felipe);
 		  
 	    return new ResponseEntity<List<Jogador>>(jogadores, HttpStatus.OK);

@@ -14,6 +14,8 @@ public class Jogador {
 	
 	private String nome;
 	
+	private Double pontos;
+
 	public Jogador() {
 		
 	}
@@ -37,6 +39,18 @@ public class Jogador {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public Double getPontos() {
+		return pontos;
+	}
+
+	public void setPontos(Double pontos) {
+		this.pontos = pontos;
+	}
+
+	public void addPontos(Double pontos) {
+		this.pontos += pontos;
 	}
 	
 	

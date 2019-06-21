@@ -53,8 +53,6 @@ public class RodadaService {
 
 		List<PontuacaoRodada> lista = pontuacaoRepo.findAllByRodada(rodada);
 
-		int posicao = 0;
-
 		Map<Long, Integer> mapaPosicao = getMapaPosicao(lista);
 
 		for (PontuacaoRodada pontuacaoRodada : lista) {
@@ -62,6 +60,9 @@ public class RodadaService {
 			Double pontuacao = calcularPontuacao(rodada, pontuacaoRodada, mapaPosicao.get(pontuacaoRodada.getJogador().getId()));
 
 			pontuacaoRodada.setPontos(pontuacao);
+			Jogador jogador = pontuacaoRodada.getJogador();
+			jogador.addPontos(pontuacao);
+			jogadorRepo.save(jogador);
 		}
 
 		pontuacaoRepo.saveAll(lista);

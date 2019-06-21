@@ -24,6 +24,11 @@ public class JogadorService {
 
 	}
 	
+	public List<Jogador> rankingJogadores(){
+		
+		return jogadorRepo.findAllByOrderByPontosDesc();
+	}
+	
 	public List<Jogador> jogadores(){
 		
 		return (List<Jogador>) jogadorRepo.findAll();

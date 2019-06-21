@@ -27,6 +27,14 @@ public class JogadorResource {
 		return new ResponseEntity<List<Jogador>>(jogadores, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/ranking", method = RequestMethod.GET)
+	public ResponseEntity<List<Jogador>> ranking() {
+
+		List<Jogador> jogadores = jogadorService.rankingJogadores();
+
+		return new ResponseEntity<List<Jogador>>(jogadores, HttpStatus.OK);
+	}
+	
 	@RequestMapping(value = "/adicionaJogador", method = RequestMethod.GET)
 	public ResponseEntity<Jogador> adicionaJogador(@RequestParam("nome") String nome) {
 

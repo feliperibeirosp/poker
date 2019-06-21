@@ -1,14 +1,25 @@
 package br.com.poker.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Jogador {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
 	private String nome;
+	
+	public Jogador() {
+		
+	}
 
-	public Jogador(long id, String nome) {
+	public Jogador(String nome) {
 		super();
-		this.id = id;
 		this.nome = nome;
 	}
 

@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,6 +28,12 @@ public class JogadorResource {
 
 		return new ResponseEntity<List<Jogador>>(jogadores, HttpStatus.OK);
 	}
+	
+	@GetMapping({"/", "/hello"})
+    public String hello(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
+        model.addAttribute("name", name);
+        return "hell2o";
+    }
 
 	@RequestMapping(value = "/ranking", method = RequestMethod.GET)
 	public ResponseEntity<List<Jogador>> ranking() {

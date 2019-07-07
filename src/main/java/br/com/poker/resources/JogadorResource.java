@@ -29,12 +29,12 @@ public class JogadorResource {
 		return new ResponseEntity<List<Jogador>>(jogadores, HttpStatus.OK);
 	}
 	
-	@GetMapping({"/", "/hello"})
-    public String hello(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
-        model.addAttribute("name", name);
-        return "hell2o";
-    }
 
+	@GetMapping(value="/numeros")
+	public String numeros() {
+		  return "{1,2,3}";
+	}
+	
 	@RequestMapping(value = "/ranking", method = RequestMethod.GET)
 	public ResponseEntity<List<Jogador>> ranking() {
 

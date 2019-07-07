@@ -83,7 +83,7 @@ public class RodadaService {
 					posicao++;
 				
 			}
-			mapa.put(pontuacao.getJogador().getId(), new Integer(posicao));
+			mapa.put(pontuacao.getJogador().getId(), Integer.valueOf(posicao));
 
 		}
 		return mapa;

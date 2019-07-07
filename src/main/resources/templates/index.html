@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body style="background: green">
+	<div id="app">
+		<table style="width: 100% align: center;">
+			<tr>
+				<th>Nome</th>
+				<th>Pontos</th>
+			</tr>
+			<tr v-for="numero in numeros">
+				<td>{{ numero.nome }}</td>
+				<td>{{ numero.pontos }}</td>
+			</tr>
+		</table>
+<!-- 			<li v-for="numero in numeros">{{ numero.nome }}</li> -->
+	</div>
+
+</body>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://vuejs.org/js/vue.js"></script>
+<script>
+var app = new Vue({
+	  el: '#app',
+	  data: {
+		    numeros: null
+		  },
+		  mounted () {
+			    axios
+			      .get('http://localhost:8080/ranking')
+			      .then(response => (this.numeros = response.data))
+			  }
+	})
+</script>
+</html>
